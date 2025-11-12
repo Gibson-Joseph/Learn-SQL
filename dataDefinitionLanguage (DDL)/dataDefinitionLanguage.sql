@@ -1,0 +1,3 @@
+-- Data Definition Language (DDL)
+-- If you have like an empty database what we want to do is go and define the data.
+-- So one of the first things that we usually do is we go and create a new tables.
