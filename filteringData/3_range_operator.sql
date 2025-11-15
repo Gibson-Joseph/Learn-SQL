@@ -16,3 +16,10 @@
 SELECT *
 FROM customers
 WHERE score BETWEEN 100 AND 500;
+-- ============================
+-- NOT BETWEEN 
+-- ============================
+-- Check if a value is outside in a range
+SELECT *
+FROM customers
+WHERE score NOT BETWEEN 100 AND 500;
