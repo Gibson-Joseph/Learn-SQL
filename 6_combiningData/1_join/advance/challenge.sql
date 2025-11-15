@@ -4,5 +4,5 @@
  */
 SELECT *
 FROM customers AS C
-    FULL JOIN orders AS O ON C.id = O.customer_id
+    LEFT JOIN orders AS O ON C.id = O.customer_id
 WHERE O.customer_id IS NOT NULL;
