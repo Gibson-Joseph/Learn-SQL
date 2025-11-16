@@ -10,6 +10,17 @@
             "database": "learn_db",
             "username": "gibson",
             "password": "gibson"
+        },
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "sales db",
+            "database": "salesdb",
+            "username": "gibson",
+            "password": "gibson"
         }
     ]
 }
