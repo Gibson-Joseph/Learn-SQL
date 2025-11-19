@@ -157,7 +157,8 @@ GROUP BY TO_CHAR(DATE_TRUNC('month', orderdate), 'month');
 -- TASK
 -- Show all orders that were placed during the month of february
 --==================================
-SELECT * FROM sales.orders
+SELECT *
+FROM sales.orders
 WHERE EXTRACT(
         MONTH
         FROM orderdate

@@ -24,9 +24,8 @@
 -- 2. Format & Casting
 --=============================
 /*
- 1. FORMAT
- 2. CONVERT
- 3. CAST
+ 1. TO_CHAR
+ 2. CAST
  */
 --=============================
 -- 3. Calculations
