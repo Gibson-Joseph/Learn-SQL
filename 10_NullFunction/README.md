@@ -46,3 +46,17 @@ So in the output we are getting a boolean true or false.
 
 - Filtering the data.
 - Finding the "unmatched rows" between two tables. (LEFT ANTI JOIN | RIGHT ANTI JOIN)
+
+### NULL Vs Empty string Vs Blank space
+
+- NULL (null) -> I don't know what the value is. It is unknown.
+- EMPTY STRING ("")-> I know the value, it is nothing. So the empty string is a STRING value which has ZERO CHARACTERS. This is total different than the NULLs.
+- BLANK SPACE (" ")-> The blank space is a string, but the size is not zero like empty string. We're going to have a size of how many spaces you have entered. We know the value, it is string. And the character of that is going to be space.
+
+### Data Policy 1:
+
+Replaceing empty string and blank space with NULL during data preparation before 'inserting' into a database to optimize storage and performance.
+
+### Data Policy 2:
+
+Replacing empty strings, blank space, Null with default value during data preparation before using it in 'reporting' to improve readiblity and resuce confusion.
