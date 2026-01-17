@@ -20,7 +20,7 @@
  ------------------------------------------------------------- 
  
  3. What is CASTING?
- Change tae data type from one to another.
+ Change the data type from one to another.
  */
 /*
  TO_CHAR 
@@ -50,6 +50,7 @@ SELECT orderid,
     creationtime,
     TO_CHAR(creationtime, 'mm-dd-yyyy') usa_format,
     TO_CHAR(creationtime, 'dd-mm-yyyy') euro_format,
+    TO_CHAR(creationtime, 'dd/mm/yyyy') slash_format,
     TO_CHAR(creationtime, 'mon dy yyyy') usa_format,
     TO_CHAR(creationtime, 'month day yyyy') usa_format
 FROM sales.orders;
