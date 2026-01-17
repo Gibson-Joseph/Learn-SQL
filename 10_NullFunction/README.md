@@ -41,3 +41,8 @@ So in the output we are getting a boolean true or false.
 ### NULLIF use case:
 
 - Preveinting the error of "dividing by zero".
+
+### IS NULL | IS NOT NULL use case:
+
+- Filtering the data.
+- Finding the "unmatched rows" between two tables. (LEFT ANTI JOIN | RIGHT ANTI JOIN)
