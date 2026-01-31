@@ -34,3 +34,30 @@ FROM (
         FROM sales.orders
         GROUP BY DATE_TRUNC('month', orderdate)::date
     ) t;
+/*
+ Customer Retentions Analysis
+ Mesure customer 's behavior and loyalty to help businesss build strong relationships with customers.
+ */
+--=================================
+-- In order to analyze customer loyalty, rank customers based on the average days between their orders.
+--=================================
+SELECT customerid,
+    ROUND(AVG(days_until_next_order)) avg_days,
+    RANK() OVER(
+        ORDER BY ROUND(AVG(days_until_next_order))
+    ) rank_avg
+FROM (
+        SELECT orderid,
+            customerid,
+            orderdate AS current_order,
+            LEAD(orderdate) OVER(
+                PARTITION BY customerid
+                ORDER BY orderdate
+            ) next_order,
+            LEAD(orderdate) OVER(
+                PARTITION BY customerid
+                ORDER BY orderdate
+            ) - orderdate AS days_until_next_order
+        FROM sales.orders
+    ) t
+GROUP BY customerid;
