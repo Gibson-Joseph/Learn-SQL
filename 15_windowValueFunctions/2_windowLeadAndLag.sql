@@ -61,3 +61,26 @@ FROM (
         FROM sales.orders
     ) t
 GROUP BY customerid;
+--
+--=====================================
+-- Find the average shipping duration in days for each month
+--=====================================
+SELECT DATE_TRUNC('month', orderdate)::DATE,
+    ROUND(AVG(shipdate - orderdate)) AS avg_ship
+FROM sales.orders
+GROUP BY DATE_TRUNC('month', orderdate)::DATE
+ORDER BY DATE_TRUNC('month', orderdate)::DATE;
+--
+-- Time Gap Analysis
+--=====================================
+-- Find the number of days betweeen each order and the previous order.
+--=====================================
+SELECT orderid,
+    orderdate AS current_order_date,
+    LAG(orderdate) OVER(
+        ORDER BY orderdate
+    ) previous_order_date,
+    orderdate - LAG(orderdate) OVER(
+        ORDER BY orderdate
+    ) AS days_between_next_order
+FROM sales.orders;
