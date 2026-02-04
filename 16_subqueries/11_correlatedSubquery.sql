@@ -25,3 +25,24 @@ SELECT *,
     ) AS total_sales
 from sales.customers c;
 -- Here we have connecting the subquery with main query
+/*
+ Different between Correlated subquery and Non Correlated subquery
+ 
+ Non-Correlated subquery:
+ 
+ Definition - Subquery is independent of the main query
+ Executions - Executed once and its result is used by the main query. It can be executed on its own.
+ Easy to use - Easier to read
+ Performance - Executed only once leads to better performance
+ Usage - Static comparisons, Filtering with constants
+ 
+ 
+ Correlated subqery:
+ 
+ Definition - Subquery is dependtent of the main query.
+ Executions - Executed for each row processed by the main query. It can't be executed on its own.
+ Easy to use - Harder to read and more complex
+ Performance - Executed multipel times leads to bad performance
+ Usage - Row-by-Row comparisons, Dynamic Filtering
+ 
+ */
