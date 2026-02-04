@@ -1,4 +1,5 @@
 -- Correlated Subquery
+-- Ref: https://www.udemy.com/course/the-complete-sql-bootcamp-30-hours-go-from-zero-to-hero/learn/lecture/45589415#overview
 /*
  1. Non-Correlated Subquery 
  - A Non correlated subquery means a subquery that can run independently from the main query. So that means the subquery is like a standalone query. Whatever we learns so for is Non Correlated subquery.
