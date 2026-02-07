@@ -56,3 +56,28 @@ FROM series;
 -- OPTION(MAXRECURSION 10);
 -- SQL Server only
 -- Now there is one more thing that you can do with the recursive CTE is to define the limit of iterations. So for example, in your code, if you say okay, if this iterates more than 10 times, then the SQL shold breaks and stops. So you can define for the SQL the maximum number of recursions. We can do this on main query. This is only for SQL server not POSTGRESQL server.
+--
+--
+--==========================================
+-- Show the employee hierarchy by displaying each employee's level within organization.
+--==========================================
+WITH RECURSIVE CTE_employee_hierarchy AS (
+    -- Anchor Query
+    SELECT employeeid,
+        firstname,
+        managerid,
+        1 AS level
+    from sales.employees
+    WHERE managerid IS NULL
+    UNION ALL
+    -- Recursive Query
+    SELECT e.employeeid,
+        e.firstname,
+        e.managerid,
+        level + 1
+    FROM sales.employees AS e
+        INNER JOIN CTE_employee_hierarchy ceh ON e.managerid = ceh.employeeid
+) --
+-- Main Query
+SELECT *
+FROM CTE_employee_hierarchy;
