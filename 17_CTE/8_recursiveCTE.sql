@@ -1,4 +1,5 @@
 -- Recursive CTE
+-- Ref: https://www.udemy.com/course/the-complete-sql-bootcamp-30-hours-go-from-zero-to-hero/learn/lecture/45844001?start=120#overview
 /*
  
  This is exactly the opposite of Non-Recursive CTE. It is a self-referencing query that repeatedly processing the the data until a certain condition is met.
@@ -17,7 +18,7 @@
  
  SYNTAX:
  
- WITH CTE-Name AS --> CTE query
+ WITH RECURSIVE CTE-Name AS --> Without explicitly saying RECURSIVE, Postgres treats CTE-Name like a normal CTE
  (
  SELECT ... -->> Anchor Query: The anchor query is going to be first query that interacts with the database and provide us the initial intermediate results. So it is the starting point of the interation.
  FROM ...
@@ -36,3 +37,22 @@
  
  SQL is going to go and execute the anchor query only once and after that SQL going to go through the recursive query. And keep looping and loopoing and interating until a certain condtion is met. And the SQL is going to go out from the CTE.
  */
+--========================
+-- Generate a Sequence of Number from 1 to 20
+--========================
+-- now the first step of the recursive CTE is to build the anchor query. So the anchor query is responsible for the first iteration. So that means the first row of the output.
+WITH RECURSIVE series AS (
+    -- Anchor Query
+    SELECT 1 AS my_number
+    UNION ALL
+    -- Recursive Query
+    SELECT my_number + 1
+    FROM series
+    WHERE my_number < 20
+) -- Main Query
+SELECT *
+FROM series;
+--
+-- OPTION(MAXRECURSION 10);
+-- SQL Server only
+-- Now there is one more thing that you can do with the recursive CTE is to define the limit of iterations. So for example, in your code, if you say okay, if this iterates more than 10 times, then the SQL shold breaks and stops. So you can define for the SQL the maximum number of recursions. We can do this on main query. This is only for SQL server not POSTGRESQL server.
