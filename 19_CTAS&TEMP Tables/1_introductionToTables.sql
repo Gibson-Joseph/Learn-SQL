@@ -12,4 +12,11 @@
  --  Now the intersect between the rows and columns we call it cell. And cell is a single piece of data.
  --  Now the whole table can be stored physically in the database as database files. So they are in the database like multiple files that are holding the information about the table. And those files are stored physically in that disk storage of database. So that means you data inside the tables are not stored like spreadsheet like an Excel, but they are stored in special database files that usual deverlopers and end users don't have access to those files.
  --  So tables is like an abstraction and representation for the actual data that are in the files. So actually each time you are querying table, the database has to go to those files and fetch the data for you.
+ 
+ Table Types:
+ We have different types of tables in SQL.
+ We have tables that stays forever, we call it premanent tables. So they stay as long as you don't drop them.
+ And you have another type of tables they called the temporary tables, and those tables can be deleted and dropped once the session ends.
+ 
+ Permanent Tables: There are two ways on how to create them. The first way is classical way where you create a table from the scratch, and then you go and insert your data, So we call it CREATE, INSERT. And the other way called CTAS Create Tables As Select it can create as well a table but based on SQL query.
  */
