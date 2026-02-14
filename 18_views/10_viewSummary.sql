@@ -8,5 +8,8 @@
  
  USE CASES:
  -- If we find like acoommon repeated logic in SQL queries, we can go and store this logic in a VIEW in the database, so the users don't have to keep repeating the logic over and over. So we use VIEWs in order to have a central business logic.
- -- Hide the complexity of your physical data model and to offer for the users a high abstracted layer.
+ -- Hide the complexity of your physical data model and to offer for the users a high abstracted layer. So you can provide for the user something very friendly and hide all the complex technical data model that you have in the database, becuase not everyone is expert with your data model.
+ -- We can use VIEWs in order to implement security and to protect our senstive data in the database, So we can offer multiple VIEWs in order to protect columns or rows in a table.
+ -- We can use VIEWs in order to have more dynamic and flexiblity for your database, where we offer the users a stable VIEW, and then you have the freedom to change stuff at your physical data model without affecting all users.
+ -- We can offer multple languages from our data model.
  */
