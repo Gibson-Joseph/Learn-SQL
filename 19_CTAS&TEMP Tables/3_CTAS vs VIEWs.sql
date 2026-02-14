@@ -1,0 +1,18 @@
+-- CTAS vs VIEWs
+/*
+ The CTAS are very similar to the VIEWs. We have a query and the output of this query is going to be like an object in the database.
+ 
+ So what are the differences between them.
+ --  Now let's say that in our dtabase we have a table that has 3 columns A, B, C.
+ --  And now what we can do we can go and create a view basaed on a query. So you create the DDL statement in order to create the VIEW in the database. And of course the database is going to go and store the query in the database, and it's going to be empty. So there will be no data because VIEWs does not store any data. And the query of the VIEW will not be yet executed.
+ -- But in the other hand, if you go and create a table using CTAS. So here again we have a query attached to the object to the table. So here what happens? The database has to execute the query in order to understand hte structure, And as well the data that should be inserted inside the table. So our SQL query is going to be executed, and the result of the query is going to be inserted inside the table. So that means thsi new table is storing already the result of the query.
+ --  So this is first different between TABLE and VIEW. As you create the VIEW the query will not be executed, and we don't have anything about the result of the query, Where in the CTAS we have already result of the query stored inside the table and everything is prepared.
+ 
+ -- So now let's see what's going to happen once the user selects something from the view. So now the database is going to go for the first tiem executing the query of the view in order to fetch the data from the original table and then presetn it as a result for the user. But in the other hand, if the user go and query the table that is create from the CTAS, SQL will not execute again the query of the CTAS because the database already done that and prepared everything, So that means we are not querying from the original table, and the data can be directly fetched from the new table so users can get immediately the results from our table is create from the CTAS.
+ 
+ -- Querying VIEWs is slower than querying CTAS table. And that's because the database has here an extra task, it must execute the query of the VIEW in order to get the data. But in the CTAS, the query is going to be faster than the VIEW, becuase we have already executed everything and prepared it for the user. So that's why tables from CTAS are way faster than VIEWs.
+ 
+ -- So let's say that we are doing data updates on the original table, like we are doing updates column C and as well in the columns B.
+ -- So let's see what this means for the user if they are using VIEWs. So the user is in the next day is executing again the same query. And again the database has to execute the query of the VIEW in order to fetch the data from the original table. So that means today in the VIEWS we are getting different data than yesterday because we have a new data and new updates, and hte user in the result can see as well the new updates and the fresh data. So the user is seeing exactly the status of the data in the original tables.
+ -- Let's see what's going to happen if the uer go and query tha table form the CTAS. So in the table of the CTAS, we are still having the data from the yesterday, all those new updates from the original data will not be reflected in this new table. Because one the user selects someting from this table, the database will not go and query or fetch the new changes from the original table, because we have already prpared the data from yesterday. So that means our user now is getting all data from the CTAS table, and they only wat to get new, fresh data from the CTAS is to re-execute the CTAS query.
+ */
