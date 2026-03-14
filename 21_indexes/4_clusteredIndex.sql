@@ -34,4 +34,11 @@
  So in the index page we can not find the actual data the entire rows, but instead the index page stores a key value that containes a pointer to another index page or to data page.
  
  And now once SQL is done building the intermediate nodes is going to go and build the last node, the root node, where it says if you are searching for customers between 1 and 10, then go to the index page with the intermediate ID. So that means the root nodes is pointing to another index page(Intermediate node) not directly to the data page.
+ 
+ =============================
+ A Clustered Index is a type of database index that determines the physical order of data stored in a table. This means the actual rows in the table are stored on disk in the same order as the clustered index key.
+ 
+ Key Idea:
+ Clustered index = controls how data is physically stored.
+ Because data can only be stored in one physical order, a table can have only one clustered index.
  */
