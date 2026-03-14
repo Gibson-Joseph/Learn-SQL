@@ -20,15 +20,15 @@
  The first section is page header, where the database can store key information about the metadata, like the page ID, and it has the following formats. It start with the file ID like 1 and the we have a unique number for each page. So the page header is a fixed size of 96 bytes.
  
  2. Varaible Size:
- This is where your data row is going to stored. So your actual ata are row is going to stored in this section. And the SQL is going to try and fit as many rows as it can in one single page, and this of course depends on the size of each row. So if you like a large table where the rows are really big so SQL can fit only few rows in one single page.
+ This is where your data row is going to stored. So your actual data are row is going to stored in this section. And the SQL is going to try and fit as many rows as it can in one single page, and this of course depends on the size of each row. So if you like a large table where the rows are really big so SQL can fit only few rows in one single page.
  
  3. Offset Array:
- This is like quick index for the rows stored inside this page. It keeps track of where each rows begins, so that the SQL easily locate a specific row without having SQL, like scanning the entire page in order ot find a row.
+ This is like quick index for the rows stored inside this page. It keeps track of where each rows begins, so that the SQL easily locate a specific row without having SQL, like scanning the entire page in order to find a row.
  
  And this is exactly how the SQL stores data inside the databases.
  
  =======================
- So a Heap table is a table without a clustered index. That menas the rows are stored randomly witout any particluar order. This is not really bad because it's going to be very quick INSERT data inside this table. But of course, finding somethign from this table is goint to be very slow. You have very fast writes but a very reads. 
+ So a Heap table is a table without a clustered index. That menas the rows are stored randomly without any particluar order. This is not really bad because it's going to be very quick INSERT data inside this table. But of course, finding something from this table is going to be very slow. You have very fast writes but a very slow reads. 
  Think about it like you are throwing all your papers in a drawer without organizing them. So you can toss things very quickly in this drawer, But if you want search for a specific paper later, it can be a very long process unit you find it, because nothing's in order.
  
  

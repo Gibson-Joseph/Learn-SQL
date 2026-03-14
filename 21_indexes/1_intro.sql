@@ -1,9 +1,9 @@
 -- Introduction Indexes
 /*
  So now in order to understand what are indexes.
- Image you have a huge book and you want to find aspecific topic or chapter, Instead of flipping a single page in order to find the topic that you are searching for, you would use the Index at the front or back of the book in order to jump straight to the right page. And that's exactly what indes does, but for your data.
+ Imagin you have a huge book and you want to find a specific topic or chapter, Instead of flipping a single page in order to find the topic that you are searching for, you would use the Index at the front or back of the book in order to jump straight to the right page. And that's exactly what index does, but for your data.
  
- Think about the inesxes as a big hotel, Now let's say that in the hotel we don't have any guides, and you would like to find the room number, let's say 501. Now what you're going to do, you're going to go and search for your room, floor by floor and checking each room until you find your room. But instead of that, thankfully hotels have a numbering system and you can ask for a map from the reception in order to understand in which building in which floor you can find your room. So by just folloiwng the map and maybe some sings, it's going to be very quickly to locate and find your room in such a big hotel.
+ Think about the inesxes as a big hotel, Now let's say that in the hotel we don't have any guides, and you would like to find the room number, let's say 501. Now what you're going to do, you're going to go and search for your room, floor by floor and checking each room until you find your room. But instead of that, thankfully hotels have a numbering system and you can ask for a map from the reception in order to understand in which building in which floor you can find your room. So by just folloiwng the map and maybe some things, it's going to be very quickly to locate and find your room in such a big hotel.
  
  
  Indexes are used to speed up the retrieval of data from a database table. They work by creating a data structure that allows the database to quickly locate and access the desired rows based on the indexed columns.

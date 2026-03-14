@@ -27,7 +27,7 @@
  
  And once the SQL construct the B-tree, it's going to be very easy for SQL for navigate through the B-tree in order to find the specific inofrmation.
  
- Now, very important to understand that the leaves, the leaf nodes at the B-tree for the clustered index contain the actual data, the data pages. So all your nice sorted pages and your data is stored at the leafe level.
+ Now, very important to understand that the leaves, the leaf nodes at the B-tree for the clustered index contain the actual data, the data pages. So all your nice sorted pages and your data is stored at the leaf level.
  Then after that, SQL can start building the intermediate nodes. And here the database can use different types of pages. We have the index page.
  
  INDEX PAGE:
